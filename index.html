@@ -1,1 +1,868 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sueño Verde — Paisajismo y Jardinería</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    :root {
+      --verde-oscuro: #1b2e1a;
+      --verde-medio: #2c4a1e;
+      --verde-sage: #6b8f4a;
+      --verde-claro: #a8c47e;
+      --crema: #f4efe5;
+      --crema-oscura: #e8dfc8;
+      --dorado: #b8965a;
+      --dorado-claro: #d4b07a;
+      --blanco: #fdfaf5;
+      --texto-oscuro: #1e2a1c;
+      --texto-medio: #3a4d36;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--blanco);
+      color: var(--texto-oscuro);
+      overflow-x: hidden;
+    }
+
+    /* ——— NAV ——— */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 4rem;
+      background: transparent;
+      transition: background 0.4s, backdrop-filter 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(27, 46, 26, 0.92);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--crema);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--dorado-claro); }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--crema);
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+
+    /* ——— HERO ——— */
+    #inicio {
+      position: relative;
+      height: 100vh;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--verde-oscuro);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 60% 40%, rgba(44,74,30,0.7) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 20% 80%, rgba(107,143,74,0.25) 0%, transparent 60%),
+        linear-gradient(160deg, #0e1e0d 0%, #1b2e1a 40%, #253d1a 100%);
+    }
+
+    /* SVG botanical pattern overlay */
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cellipse cx='100' cy='60' rx='18' ry='40' fill='none' stroke='%23a8c47e' stroke-width='1.5'/%3E%3Cellipse cx='60' cy='120' rx='12' ry='28' fill='none' stroke='%23a8c47e' stroke-width='1' transform='rotate(-30 60 120)'/%3E%3Cellipse cx='140' cy='130' rx='12' ry='28' fill='none' stroke='%23a8c47e' stroke-width='1' transform='rotate(30 140 130)'/%3E%3Cline x1='100' y1='100' x2='100' y2='190' stroke='%23a8c47e' stroke-width='1.2'/%3E%3Cline x1='100' y1='140' x2='60' y2='120' stroke='%23a8c47e' stroke-width='0.8'/%3E%3Cline x1='100' y1='155' x2='140' y2='130' stroke='%23a8c47e' stroke-width='0.8'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+    }
+
+    .hero-img {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 55%;
+      object-fit: cover;
+      opacity: 0.35;
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 30%, black 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 30%, black 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 4rem;
+      max-width: 660px;
+      animation: heroFadeIn 1.2s ease both;
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--dorado-claro);
+      margin-bottom: 1.4rem;
+      border-bottom: 1px solid var(--dorado);
+      padding-bottom: 0.4rem;
+      animation: heroFadeIn 1.2s 0.2s ease both;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 7vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--crema);
+      margin-bottom: 1.6rem;
+      animation: heroFadeIn 1.2s 0.35s ease both;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--verde-claro);
+    }
+
+    .hero-sub {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: rgba(244, 239, 229, 0.75);
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 2.8rem;
+      animation: heroFadeIn 1.2s 0.5s ease both;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: var(--dorado);
+      color: var(--verde-oscuro);
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      transition: background 0.25s, transform 0.2s;
+      animation: heroFadeIn 1.2s 0.65s ease both;
+    }
+    .hero-cta:hover { background: var(--dorado-claro); transform: translateY(-2px); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(244,239,229,0.5);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      animation: bounce 2.5s ease-in-out infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(244,239,229,0.5), transparent);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ——— SECTION BASE ——— */
+    section { padding: 7rem 4rem; }
+
+    .section-tag {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--verde-sage);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--texto-oscuro);
+      margin-bottom: 1rem;
+    }
+
+    .divider {
+      width: 50px;
+      height: 2px;
+      background: var(--dorado);
+      margin: 1.4rem 0 2.5rem;
+    }
+
+    /* ——— SERVICIOS ——— */
+    #servicios {
+      background: var(--crema);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #servicios::before {
+      content: 'Servicios';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9rem;
+      font-weight: 300;
+      color: rgba(107,143,74,0.07);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .servicios-header { max-width: 480px; margin-bottom: 4rem; }
+
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .servicio-card {
+      background: var(--blanco);
+      padding: 2.5rem;
+      border-left: 3px solid transparent;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .servicio-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--verde-sage), var(--dorado));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s;
+    }
+
+    .servicio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(27,46,26,0.1);
+      border-left-color: var(--verde-sage);
+    }
+    .servicio-card:hover::after { transform: scaleX(1); }
+
+    .servicio-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .servicio-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.8rem;
+    }
+
+    .servicio-card p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--texto-medio);
+      font-weight: 300;
+    }
+
+    /* ——— GALERÍA ——— */
+    #galeria {
+      background: var(--verde-oscuro);
+      padding: 7rem 4rem;
+    }
+
+    #galeria .section-title { color: var(--crema); }
+    #galeria .section-tag { color: var(--verde-claro); }
+    #galeria .divider { background: var(--dorado); }
+
+    .galeria-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .galeria-sub {
+      font-weight: 300;
+      color: rgba(244,239,229,0.6);
+      font-size: 0.9rem;
+      max-width: 320px;
+      line-height: 1.7;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      gap: 1rem;
+    }
+
+    .galeria-item {
+      overflow: hidden;
+      position: relative;
+      background: var(--verde-medio);
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease, filter 0.4s;
+      filter: saturate(0.85);
+    }
+
+    .galeria-item:hover img {
+      transform: scale(1.06);
+      filter: saturate(1.1);
+    }
+
+    .galeria-item:nth-child(1) { grid-column: 1 / 6; grid-row: 1; height: 320px; }
+    .galeria-item:nth-child(2) { grid-column: 6 / 9; grid-row: 1; height: 320px; }
+    .galeria-item:nth-child(3) { grid-column: 9 / 13; grid-row: 1; height: 320px; }
+    .galeria-item:nth-child(4) { grid-column: 1 / 5; grid-row: 2; height: 260px; }
+    .galeria-item:nth-child(5) { grid-column: 5 / 9; grid-row: 2; height: 260px; }
+    .galeria-item:nth-child(6) { grid-column: 9 / 13; grid-row: 2; height: 260px; }
+
+    /* ——— SOBRE NOSOTROS ——— */
+    #sobre {
+      background: var(--blanco);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      padding: 7rem 4rem;
+    }
+
+    .sobre-img-wrap {
+      position: relative;
+    }
+
+    .sobre-img-wrap img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sobre-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: 20px;
+      bottom: 20px;
+      border: 2px solid var(--verde-claro);
+      z-index: -1;
+    }
+
+    .sobre-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--verde-oscuro);
+      color: var(--crema);
+      padding: 1.8rem;
+      text-align: center;
+    }
+
+    .sobre-badge strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--dorado-claro);
+      line-height: 1;
+    }
+
+    .sobre-badge span {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(244,239,229,0.7);
+      font-weight: 300;
+    }
+
+    .sobre-text p {
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--texto-medio);
+      margin-bottom: 1.2rem;
+    }
+
+    .valores-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .valor {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .valor-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--dorado);
+      margin-top: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .valor p {
+      font-size: 0.88rem !important;
+      margin-bottom: 0 !important;
+      color: var(--texto-oscuro) !important;
+    }
+
+    /* ——— CONTACTO ——— */
+    #contacto {
+      background: linear-gradient(135deg, var(--verde-medio) 0%, var(--verde-oscuro) 100%);
+      padding: 7rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #contacto::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='rgba(168,196,126,0.08)' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='50' fill='none' stroke='rgba(168,196,126,0.06)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 300px;
+      background-position: center;
+    }
+
+    #contacto .section-tag { color: var(--verde-claro); }
+    #contacto .section-title { color: var(--crema); }
+    #contacto .divider { margin: 1.4rem auto 2.5rem; }
+
+    .contacto-sub {
+      color: rgba(244,239,229,0.7);
+      font-weight: 300;
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto 3.5rem;
+      line-height: 1.8;
+    }
+
+    .contacto-actions {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1.1rem 2.4rem;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-whatsapp:hover { background: #1db954; transform: translateY(-3px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: transparent;
+      color: var(--crema);
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1.1rem 2.4rem;
+      border: 1px solid rgba(244,239,229,0.4);
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--crema); transform: translateY(-3px); }
+
+    .contacto-info {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      margin-top: 5rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .info-item {
+      text-align: center;
+    }
+
+    .info-item .label {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--dorado-claro);
+      margin-bottom: 0.5rem;
+    }
+
+    .info-item .value {
+      color: rgba(244,239,229,0.85);
+      font-weight: 300;
+      font-size: 0.95rem;
+    }
+
+    /* ——— FOOTER ——— */
+    footer {
+      background: #0d1a0d;
+      padding: 2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer .nav-logo { font-size: 1.1rem; }
+
+    footer p {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      font-weight: 300;
+    }
+
+    /* ——— REVEAL ANIMATIONS ——— */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ——— RESPONSIVE ——— */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.8rem; }
+      .nav-links { display: none; }
+
+      section { padding: 5rem 1.8rem; }
+      #inicio { padding: 0; }
+      .hero-content { padding: 0 1.8rem; max-width: 100%; }
+      .hero-img { width: 100%; opacity: 0.18; }
+
+      #sobre {
+        grid-template-columns: 1fr;
+        padding: 5rem 1.8rem;
+      }
+      .sobre-img-wrap img { height: 300px; }
+      .sobre-img-wrap::before { display: none; }
+
+      .galeria-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .galeria-item { grid-column: auto !important; grid-row: auto !important; height: 200px !important; }
+
+      #contacto { padding: 5rem 1.8rem; }
+      footer { padding: 2rem 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#inicio" class="nav-logo">Sueño <span>Verde</span></a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#sobre">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <img
+      class="hero-img"
+      src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&auto=format&fit=crop"
+      alt="Jardín verde exuberante"
+    />
+    <div class="hero-content">
+      <span class="hero-tag">Paisajismo · Jardinería · Buenos Aires</span>
+      <h1 class="hero-title">
+        Tu jardín,<br /><em>tu refugio</em><br />soñado.
+      </h1>
+      <p class="hero-sub">
+        Transformamos espacios exteriores en ambientes únicos, vivos y sostenibles. Diseño, instalación y mantenimiento a medida.
+      </p>
+      <a href="#contacto" class="hero-cta">
+        ↓ &nbsp; Hablemos
+      </a>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="servicios-header reveal">
+      <p class="section-tag">Lo que hacemos</p>
+      <h2 class="section-title">Servicios<br />integrales</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card reveal">
+        <span class="servicio-icon">🌿</span>
+        <h3>Diseño Paisajístico</h3>
+        <p>Creamos el proyecto de tu jardín desde cero, combinando vegetación, texturas y materiales para lograr un espacio armonioso y funcional.</p>
+      </div>
+      <div class="servicio-card reveal">
+        <span class="servicio-icon">✂️</span>
+        <h3>Poda y Mantenimiento</h3>
+        <p>Cuidamos tus plantas y árboles con técnicas profesionales para que siempre luzcan en su mejor estado durante todo el año.</p>
+      </div>
+      <div class="servicio-card reveal">
+        <span class="servicio-icon">🌱</span>
+        <h3>Implantación de Césped</h3>
+        <p>Instalación de césped natural o sintético, preparación del suelo y sistemas de riego para un verde perfecto y duradero.</p>
+      </div>
+      <div class="servicio-card reveal">
+        <span class="servicio-icon">💧</span>
+        <h3>Riego Automático</h3>
+        <p>Diseño e instalación de sistemas de riego inteligente que ahorran agua y mantienen tu jardín hidratado sin esfuerzo.</p>
+      </div>
+      <div class="servicio-card reveal">
+        <span class="servicio-icon">🪨</span>
+        <h3>Jardinería Vertical</h3>
+        <p>Muros verdes y jardines verticales para transformar paredes vacías en pulmones de vida, ideales para espacios urbanos.</p>
+      </div>
+      <div class="servicio-card reveal">
+        <span class="servicio-icon">🌸</span>
+        <h3>Plantas y Flores</h3>
+        <p>Selección, provisión y plantación de especies adaptadas al clima de tu zona para garantizar floración durante todo el año.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <div class="galeria-header">
+      <div class="reveal">
+        <p class="section-tag">Nuestros trabajos</p>
+        <h2 class="section-title">Galería</h2>
+        <div class="divider"></div>
+      </div>
+      <p class="galeria-sub reveal">
+        Cada proyecto es único. Explorá algunos de los jardines que transformamos con amor y dedicación.
+      </p>
+    </div>
+    <div class="galeria-grid">
+      <div class="galeria-item reveal">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&auto=format&fit=crop" alt="Jardín diseñado" />
+      </div>
+      <div class="galeria-item reveal">
+        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=600&auto=format&fit=crop" alt="Plantas decorativas" />
+      </div>
+      <div class="galeria-item reveal">
+        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&auto=format&fit=crop" alt="Jardín con sendero" />
+      </div>
+      <div class="galeria-item reveal">
+        <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=600&auto=format&fit=crop" alt="Paisajismo moderno" />
+      </div>
+      <div class="galeria-item reveal">
+        <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=600&auto=format&fit=crop" alt="Vegetación exuberante" />
+      </div>
+      <div class="galeria-item reveal">
+        <img src="https://images.unsplash.com/photo-1504194922791-0ac10f01e75d?w=600&auto=format&fit=crop" alt="Jardín con flores" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="sobre">
+    <div class="sobre-img-wrap reveal">
+      <img
+        src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=800&auto=format&fit=crop"
+        alt="Equipo de Sueño Verde trabajando"
+      />
+      <div class="sobre-badge">
+        <strong>+10</strong>
+        <span>Años de<br/>experiencia</span>
+      </div>
+    </div>
+    <div class="sobre-text reveal">
+      <p class="section-tag">Nuestra historia</p>
+      <h2 class="section-title">Pasión por<br />la naturaleza</h2>
+      <div class="divider"></div>
+      <p>
+        Somos un equipo de paisajistas y jardineros apasionados por crear espacios verdes que conecten a las personas con la naturaleza. Nos especializamos en proyectos residenciales y comerciales en el Gran Buenos Aires.
+      </p>
+      <p>
+        Cada jardín que diseñamos refleja la personalidad de quien lo habita. Trabajamos con especies autóctonas y adaptadas al clima local, priorizando la sustentabilidad y el bajo mantenimiento.
+      </p>
+      <div class="valores-grid">
+        <div class="valor">
+          <div class="valor-dot"></div>
+          <p>Diseño personalizado</p>
+        </div>
+        <div class="valor">
+          <div class="valor-dot"></div>
+          <p>Materiales de calidad</p>
+        </div>
+        <div class="valor">
+          <div class="valor-dot"></div>
+          <p>Plantas autóctonas</p>
+        </div>
+        <div class="valor">
+          <div class="valor-dot"></div>
+          <p>Compromiso ambiental</p>
+        </div>
+        <div class="valor">
+          <div class="valor-dot"></div>
+          <p>Garantía de trabajo</p>
+        </div>
+        <div class="valor">
+          <div class="valor-dot"></div>
+          <p>Asesoramiento gratuito</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="reveal">
+      <p class="section-tag">Hablemos</p>
+      <h2 class="section-title">¿Listo para crear<br/>tu jardín ideal?</h2>
+      <div class="divider"></div>
+      <p class="contacto-sub">
+        Contactanos hoy para recibir tu asesoramiento gratuito. Estamos en el Gran Buenos Aires y respondemos rápido.
+      </p>
+    </div>
+    <div class="contacto-actions reveal">
+      <a href="https://wa.me/5491100000000?text=Hola!%20Me%20gustaría%20consultar%20sobre%20un%20proyecto%20de%20jardín." class="btn-whatsapp" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Escribinos por WhatsApp
+      </a>
+      <a href="mailto:contacto@suenoverde.com.ar" class="btn-outline">
+        ✉ &nbsp; Enviar email
+      </a>
+    </div>
+
+    <div class="contacto-info reveal">
+      <div class="info-item">
+        <p class="label">Zona de trabajo</p>
+        <p class="value">Gran Buenos Aires</p>
+      </div>
+      <div class="info-item">
+        <p class="label">Horario</p>
+        <p class="value">Lunes a Sábado · 8 a 18 hs</p>
+      </div>
+      <div class="info-item">
+        <p class="label">Consulta inicial</p>
+        <p class="value">Sin cargo · Sin compromiso</p>
+      </div>
+      <div class="info-item">
+        <p class="label">Instagram</p>
+        <p class="value">@suenoverde.paisa</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#inicio" class="nav-logo">Sueño <span>Verde</span></a>
+    <p>© 2025 Sueño Verde Paisajismo y Jardinería. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
