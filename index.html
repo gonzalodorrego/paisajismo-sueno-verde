@@ -1,1 +1,709 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paisajista en General Rodríguez | Sueño Verde Jardinería y Paisajismo</title>
+<meta name="description" content="Diseño, mantenimiento y paisajismo profesional de jardines en General Rodríguez y alrededores. Paisajista matriculado. Atención personalizada. Solicitá tu presupuesto por WhatsApp.">
+<meta name="keywords" content="paisajista General Rodríguez, jardinería General Rodríguez, paisajismo General Rodríguez, jardineros General Rodríguez, diseño de jardines General Rodríguez, mantenimiento de jardines General Rodríguez, paisajista zona oeste, jardinería zona oeste">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Sueño Verde — Jardinería y Paisajismo en General Rodríguez">
+<meta property="og:description" content="Diseñamos espacios verdes que transforman tu hogar. Paisajista matriculado en General Rodríguez y alrededores.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B3B2B'/%3E%3Cpath d='M32 46C32 46 18 40 18 24C18 24 32 22 32 46Z' fill='%237E8F6B'/%3E%3Cpath d='M32 46C32 46 46 40 46 24C46 24 32 22 32 46Z' fill='%23A9B594'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Sueño Verde Jardinería y Paisajismo",
+  "image": "https://images.unsplash.com/photo-1761637822930-fb1c1a3df94d",
+  "description": "Diseño, mantenimiento y paisajismo profesional de jardines en General Rodríguez y alrededores. Paisajista matriculado, atención personalizada.",
+  "telephone": "+54-11-2575-3220",
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "City",
+    "name": "General Rodríguez"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "General Rodríguez",
+    "addressRegion": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "url": "https://www.suenoverdepaisajismo.com.ar",
+  "sameAs": []
+}
+</script>
+<style>
+  :root{
+    --verde-bosque:#1B3B2B;
+    --verde-bosque-deep:#122A1F;
+    --verde-salvia:#7E8F6B;
+    --verde-salvia-soft:#A9B594;
+    --marfil:#FAF7F1;
+    --beige:#EFE8D9;
+    --gris:#2B2B27;
+    --gris-suave:#63645C;
+    --linea:rgba(27,59,43,0.14);
+    --font-display:"Fraunces", serif;
+    --font-body:"Jost", sans-serif;
+    --ease:cubic-bezier(.22,.7,.2,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--gris);
+    background:var(--marfil);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .eyebrow{
+    font-family:var(--font-body);
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:.72rem;
+    font-weight:500;
+    color:var(--verde-salvia);
+  }
+  h1,h2,h3{font-family:var(--font-display);font-weight:500;margin:0;color:var(--verde-bosque);}
+  .container{max-width:1240px;margin:0 auto;padding:0 6vw;}
+  section{position:relative;}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease), transform .9s var(--ease);}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:26px 6vw;
+    transition:padding .4s var(--ease), background .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  header.scrolled{
+    padding:14px 6vw;
+    background:rgba(250,247,241,0.92);
+    backdrop-filter:blur(10px);
+    box-shadow:0 1px 0 var(--linea);
+  }
+  .logo{
+    font-family:var(--font-display);
+    line-height:1;
+    color:var(--marfil);
+    transition:color .4s var(--ease);
+  }
+  header.scrolled .logo{color:var(--verde-bosque);}
+  .logo .brand{display:block;font-size:1.32rem;letter-spacing:.08em;font-weight:500;}
+  .logo .sub{display:block;font-family:var(--font-body);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;margin-top:4px;opacity:.85;}
+  nav.desktop-nav{display:flex;align-items:center;gap:44px;}
+  nav.desktop-nav .links{display:flex;gap:34px;}
+  nav.desktop-nav a{
+    font-size:.85rem;letter-spacing:.03em;color:var(--marfil);
+    position:relative;padding:4px 0;transition:color .4s var(--ease);
+  }
+  header.scrolled nav.desktop-nav a{color:var(--gris);}
+  nav.desktop-nav a::after{
+    content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;
+    transition:width .35s var(--ease);
+  }
+  nav.desktop-nav a:hover::after{width:100%;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:13px 26px;border-radius:2px;
+    font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500;
+    border:1px solid var(--verde-bosque);
+    transition:background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), transform .35s var(--ease);
+    cursor:pointer;white-space:nowrap;
+  }
+  .btn-solid{background:var(--verde-bosque);color:var(--marfil);}
+  .btn-solid:hover{background:var(--verde-bosque-deep);transform:translateY(-1px);}
+  .btn-outline-light{border-color:rgba(250,247,241,.55);color:var(--marfil);}
+  .btn-outline-light:hover{background:rgba(250,247,241,.12);}
+  .btn-outline-dark{border-color:var(--verde-bosque);color:var(--verde-bosque);background:transparent;}
+  .btn-outline-dark:hover{background:var(--verde-bosque);color:var(--marfil);}
+  .header-cta{display:none;}
+  header.scrolled .header-cta,
+  header .header-cta{display:inline-flex;}
+
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:1200;}
+  .burger span{width:26px;height:1.5px;background:var(--marfil);transition:.35s var(--ease);}
+  header.scrolled .burger span{background:var(--verde-bosque);}
+  .burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+  .mobile-nav{
+    position:fixed;inset:0;background:var(--verde-bosque);z-index:1100;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
+    transform:translateY(-100%);transition:transform .5s var(--ease);
+  }
+  .mobile-nav.open{transform:translateY(0);}
+  .mobile-nav a{color:var(--marfil);font-family:var(--font-display);font-size:1.7rem;font-weight:400;}
+  .mobile-nav .btn{margin-top:10px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100svh;display:flex;align-items:flex-end;
+    background:linear-gradient(180deg, rgba(18,42,31,.35) 0%, rgba(18,42,31,.22) 38%, rgba(18,42,31,.78) 100%),
+      url('https://images.unsplash.com/photo-1761637822930-fb1c1a3df94d?fm=jpg&q=80&w=2400&auto=format&fit=crop') center/cover no-repeat;
+    padding:0 6vw 90px;
+  }
+  .hero-inner{max-width:1240px;margin:0 auto;width:100%;color:var(--marfil);}
+  .hero-inner .eyebrow{color:var(--verde-salvia-soft);}
+  .hero h1{
+    color:var(--marfil);
+    font-size:clamp(2.4rem, 5.6vw, 4.4rem);
+    line-height:1.06;
+    max-width:15ch;
+    margin-top:18px;
+    font-weight:400;
+  }
+  .hero p.subtext{
+    max-width:42ch;margin-top:22px;font-size:1.06rem;line-height:1.6;color:rgba(250,247,241,.88);font-weight:300;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:38px;}
+  .hero-foot{
+    margin-top:56px;display:flex;align-items:center;gap:14px;
+    font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,247,241,.75);
+  }
+  .hero-foot .dot{width:6px;height:6px;border-radius:50%;background:var(--verde-salvia-soft);}
+  .scroll-cue{
+    position:absolute;bottom:26px;right:6vw;color:rgba(250,247,241,.7);
+    display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+  }
+  .scroll-cue .line{width:1px;height:46px;background:rgba(250,247,241,.5);animation:scrollcue 2.2s infinite var(--ease);}
+  @keyframes scrollcue{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}50.1%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+  /* ---------- PRESENTACION ---------- */
+  .presentacion{padding:150px 0 120px;}
+  .presentacion .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start;}
+  .presentacion h2{font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1.18;max-width:12ch;}
+  .presentacion .copy p{font-size:1.05rem;line-height:1.85;color:var(--gris-suave);font-weight:300;margin:0 0 20px;max-width:52ch;}
+  .badges{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .badge{
+    display:flex;align-items:center;gap:10px;padding:11px 18px;
+    border:1px solid var(--linea);border-radius:2px;font-size:.78rem;letter-spacing:.03em;color:var(--verde-bosque);
+  }
+  .badge svg{flex:none;width:15px;height:15px;color:var(--verde-salvia);}
+
+  /* ---------- SERVICIOS ---------- */
+  .servicios{padding:110px 0;background:var(--verde-bosque);color:var(--marfil);}
+  .servicios .head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:64px;flex-wrap:wrap;}
+  .servicios .head h2{color:var(--marfil);font-size:clamp(1.9rem,3.4vw,2.7rem);max-width:14ch;}
+  .servicios .head p{color:rgba(250,247,241,.68);max-width:36ch;font-weight:300;line-height:1.7;margin:0;}
+  .servicios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(250,247,241,.14);}
+  .servicio-card{
+    background:var(--verde-bosque-deep);padding:40px 34px;min-height:300px;
+    display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;
+  }
+  .servicio-card .bgimg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.24;transition:opacity .6s var(--ease), transform .8s var(--ease);transform:scale(1.05);}
+  .servicio-card:hover .bgimg{opacity:.42;transform:scale(1.12);}
+  .servicio-card .num{font-family:var(--font-display);font-size:.85rem;color:var(--verde-salvia-soft);position:relative;z-index:1;}
+  .servicio-card h3{color:var(--marfil);font-size:1.28rem;font-weight:400;margin-top:14px;position:relative;z-index:1;}
+  .servicio-card p{color:rgba(250,247,241,.72);font-size:.92rem;line-height:1.65;font-weight:300;margin-top:12px;position:relative;z-index:1;}
+
+  /* ---------- PROCESO ---------- */
+  .proceso{padding:130px 0;}
+  .proceso .head{max-width:44ch;margin-bottom:80px;}
+  .proceso .head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);}
+  .pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--linea);}
+  .paso{padding:38px 26px 0 0;border-right:1px solid var(--linea);}
+  .paso:last-child{border-right:none;}
+  .paso .n{font-family:var(--font-display);font-size:2.6rem;color:var(--verde-salvia);font-weight:300;line-height:1;}
+  .paso h3{font-size:1.08rem;font-weight:500;margin-top:18px;color:var(--verde-bosque);}
+  .paso p{font-size:.9rem;color:var(--gris-suave);line-height:1.65;margin-top:10px;font-weight:300;padding-right:8px;}
+
+  /* ---------- PROYECTOS ---------- */
+  .proyectos{padding:120px 0 60px;background:var(--beige);}
+  .proyectos .head{max-width:50ch;margin-bottom:60px;}
+  .proyectos .head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);}
+  .galeria{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:14px;padding-bottom:110px;}
+  .g-item{position:relative;overflow:hidden;border-radius:1px;grid-column:span 3;}
+  .g-item:nth-child(1){grid-column:span 4;grid-row:span 2;}
+  .g-item:nth-child(2){grid-column:span 2;}
+  .g-item:nth-child(3){grid-column:span 2;}
+  .g-item:nth-child(4){grid-column:span 3;grid-row:span 2;}
+  .g-item:nth-child(5){grid-column:span 3;grid-row:span 2;}
+  .g-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);}
+  .g-item:hover img{transform:scale(1.06);}
+  .g-item .tag{
+    position:absolute;left:16px;bottom:16px;color:#fff;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+    opacity:0;transform:translateY(8px);transition:.45s var(--ease);
+  }
+  .g-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));opacity:0;transition:.45s var(--ease);}
+  .g-item:hover::after,.g-item:hover .tag{opacity:1;transform:translateY(0);}
+
+  /* ---------- DIFERENCIAL ---------- */
+  .diferencial{padding:130px 0;}
+  .diferencial .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;}
+  .diferencial .img-wrap{position:relative;aspect-ratio:4/5;overflow:hidden;}
+  .diferencial .img-wrap img{width:100%;height:100%;object-fit:cover;}
+  .diferencial h2{font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.2;max-width:13ch;}
+  .diferencial p{color:var(--gris-suave);font-size:1.02rem;line-height:1.85;font-weight:300;margin-top:26px;max-width:48ch;}
+  .indicadores{display:flex;flex-direction:column;gap:0;margin-top:38px;}
+  .indicador{display:flex;align-items:center;gap:16px;padding:18px 0;border-top:1px solid var(--linea);}
+  .indicador:last-child{border-bottom:1px solid var(--linea);}
+  .indicador span{font-size:.94rem;color:var(--verde-bosque);letter-spacing:.02em;}
+  .indicador svg{width:16px;height:16px;color:var(--verde-salvia);flex:none;}
+
+  /* ---------- TESTIMONIOS ---------- */
+  .testimonios{padding:120px 0;background:var(--verde-bosque-deep);color:var(--marfil);}
+  .testimonios .head{text-align:center;margin-bottom:70px;}
+  .testimonios .head h2{color:var(--marfil);font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;}
+  .test-card p.quote{
+    font-family:var(--font-display);font-style:italic;font-weight:300;font-size:1.12rem;line-height:1.6;color:rgba(250,247,241,.92);
+  }
+  .test-card .who{margin-top:26px;display:flex;flex-direction:column;gap:2px;}
+  .test-card .who .name{font-size:.86rem;letter-spacing:.03em;color:var(--verde-salvia-soft);}
+  .test-card .who .place{font-size:.76rem;color:rgba(250,247,241,.55);}
+
+  /* ---------- CTA FINAL ---------- */
+  .cta-final{
+    min-height:64vh;display:flex;align-items:center;justify-content:center;text-align:center;
+    background:linear-gradient(180deg, rgba(18,42,31,.62), rgba(18,42,31,.78)),
+      url('https://images.unsplash.com/photo-1780732658907-33c2e90a902c?fm=jpg&q=80&w=2400&auto=format&fit=crop') center/cover fixed;
+    padding:110px 6vw;
+  }
+  .cta-final h2{color:var(--marfil);font-size:clamp(2rem,4.4vw,3.4rem);max-width:16ch;margin:0 auto;line-height:1.15;font-weight:400;}
+  .cta-final p{color:rgba(250,247,241,.85);font-size:1.05rem;margin:24px auto 0;max-width:42ch;font-weight:300;}
+  .cta-final .btn{margin-top:38px;}
+
+  /* ---------- CONTACTO ---------- */
+  .contacto{padding:130px 0;}
+  .contacto .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;}
+  .contacto h2{font-size:clamp(1.9rem,3.4vw,2.7rem);max-width:12ch;}
+  .contacto .info{margin-top:38px;display:flex;flex-direction:column;gap:22px;}
+  .contacto .info .row{display:flex;gap:14px;align-items:flex-start;}
+  .contacto .info svg{width:18px;height:18px;color:var(--verde-salvia);margin-top:3px;flex:none;}
+  .contacto .info .row div{font-size:.98rem;color:var(--gris);line-height:1.5;}
+  .contacto .info .row small{display:block;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--verde-salvia);margin-bottom:3px;}
+  .contacto .btn{margin-top:30px;}
+
+  form.presupuesto{display:flex;flex-direction:column;gap:22px;}
+  .field{display:flex;flex-direction:column;gap:8px;}
+  .field label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--verde-salvia);}
+  .field input, .field select, .field textarea{
+    border:none;border-bottom:1px solid var(--linea);background:transparent;
+    padding:10px 2px;font-family:var(--font-body);font-size:1rem;color:var(--gris);
+    transition:border-color .3s var(--ease);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none;border-color:var(--verde-bosque);}
+  .field textarea{resize:vertical;min-height:90px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  form.presupuesto .btn{align-self:flex-start;margin-top:6px;border:none;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--verde-bosque);color:rgba(250,247,241,.8);padding:80px 0 30px;}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:60px;padding-bottom:56px;border-bottom:1px solid rgba(250,247,241,.14);}
+  footer .logo2{font-family:var(--font-display);color:var(--marfil);font-size:1.3rem;letter-spacing:.06em;}
+  footer .tagline{font-style:italic;font-family:var(--font-display);font-weight:300;color:rgba(250,247,241,.65);margin-top:14px;max-width:28ch;}
+  footer .col-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--verde-salvia-soft);margin-bottom:18px;}
+  footer .col a, footer .col div{display:block;font-size:.9rem;color:rgba(250,247,241,.78);margin-bottom:12px;}
+  .social{display:flex;gap:14px;margin-top:6px;}
+  .social a{width:36px;height:36px;border:1px solid rgba(250,247,241,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.35s var(--ease);}
+  .social a:hover{background:rgba(250,247,241,.14);}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;font-size:.78rem;color:rgba(250,247,241,.5);flex-wrap:wrap;gap:14px;}
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .wa-float{
+    position:fixed;right:26px;bottom:26px;z-index:900;
+    width:58px;height:58px;border-radius:50%;background:#1B3B2B;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(18,42,31,.35);transition:transform .3s var(--ease);
+  }
+  .wa-float:hover{transform:scale(1.08);}
+  .wa-float svg{width:27px;height:27px;color:#fff;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:980px){
+    nav.desktop-nav{display:none;}
+    .burger{display:flex;}
+    .presentacion .grid, .diferencial .grid, .contacto .grid{grid-template-columns:1fr;gap:50px;}
+    .servicios-grid{grid-template-columns:repeat(2,1fr);}
+    .pasos{grid-template-columns:repeat(2,1fr);}
+    .paso{border-bottom:1px solid var(--linea);padding-bottom:34px;}
+    .test-grid{grid-template-columns:1fr;gap:44px;}
+    .foot-grid{grid-template-columns:1fr;gap:40px;}
+    .galeria{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px;}
+    .g-item, .g-item:nth-child(1), .g-item:nth-child(2), .g-item:nth-child(3), .g-item:nth-child(4), .g-item:nth-child(5){grid-column:span 1;grid-row:span 1;}
+  }
+  @media (max-width:600px){
+    .servicios-grid{grid-template-columns:1fr;}
+    .pasos{grid-template-columns:1fr;}
+    .row2{grid-template-columns:1fr;}
+    .hero{padding-bottom:70px;}
+    .scroll-cue{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a href="#inicio" class="logo">
+    <span class="brand">SUEÑO VERDE</span>
+    <span class="sub">Jardinería &amp; Paisajismo</span>
+  </a>
+  <nav class="desktop-nav">
+    <div class="links">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a class="btn btn-solid header-cta" href="https://wa.me/541125753220" target="_blank" rel="noopener">Solicitar presupuesto</a>
+  </nav>
+  <button class="burger" id="burgerBtn" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#inicio">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#proyectos">Proyectos</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#contacto">Contacto</a>
+  <a class="btn btn-outline-light" href="https://wa.me/541125753220" target="_blank" rel="noopener">Solicitar presupuesto</a>
+</div>
+
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <p class="eyebrow">Sueño Verde · Jardinería y Paisajismo</p>
+    <h1>Diseñamos espacios verdes que transforman tu hogar.</h1>
+    <p class="subtext">Jardinería y paisajismo profesional en General Rodríguez y alrededores.</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="https://wa.me/541125753220" target="_blank" rel="noopener">Solicitar presupuesto</a>
+      <a class="btn btn-outline-light" href="#proyectos">Ver nuestros proyectos</a>
+    </div>
+    <div class="hero-foot"><span class="dot"></span> Paisajista matriculado</div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<section class="presentacion" id="nosotros">
+  <div class="container grid">
+    <div class="reveal">
+      <p class="eyebrow">Sobre nosotros</p>
+      <h2>Naturaleza diseñada para vos.</h2>
+    </div>
+    <div class="copy reveal">
+      <p>En Sueño Verde Jardinería y Paisajismo diseñamos, transformamos y mantenemos espacios verdes para crear ambientes únicos, funcionales y en armonía con la naturaleza.</p>
+      <p>Trabajamos de manera personalizada, adaptando cada proyecto al espacio, estilo y necesidades de cada cliente.</p>
+      <div class="badges">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg> Paisajista matriculado</div>
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg> Atención personalizada</div>
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg> General Rodríguez y alrededores</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="servicios" id="servicios">
+  <div class="container">
+    <div class="head reveal">
+      <h2>Nuestros servicios</h2>
+      <p>Un servicio integral, desde el diseño inicial hasta el mantenimiento continuo de tu espacio verde.</p>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card reveal">
+        <div class="bgimg" style="background-image:url('https://images.unsplash.com/photo-1780732658907-33c2e90a902c?fm=jpg&q=70&w=1200&auto=format&fit=crop')"></div>
+        <span class="num">01</span>
+        <h3>Diseño y Paisajismo</h3>
+        <p>Diseño integral de espacios verdes adaptados a cada propiedad y estilo.</p>
+      </div>
+      <div class="servicio-card reveal">
+        <div class="bgimg" style="background-image:url('https://images.unsplash.com/photo-1749803915455-a7642520d0d3?fm=jpg&q=70&w=1200&auto=format&fit=crop')"></div>
+        <span class="num">02</span>
+        <h3>Mantenimiento de Jardines</h3>
+        <p>Mantenimiento profesional para conservar jardines saludables y cuidados durante todo el año.</p>
+      </div>
+      <div class="servicio-card reveal">
+        <div class="bgimg" style="background-image:url('https://images.unsplash.com/photo-1738193830098-2d92352a1856?fm=jpg&q=70&w=1200&auto=format&fit=crop')"></div>
+        <span class="num">03</span>
+        <h3>Diseño de Jardines</h3>
+        <p>Creación y renovación de jardines residenciales.</p>
+      </div>
+      <div class="servicio-card reveal">
+        <div class="bgimg" style="background-image:url('https://images.unsplash.com/photo-1686663048931-6df69f577a2f?fm=jpg&q=70&w=1200&auto=format&fit=crop')"></div>
+        <span class="num">04</span>
+        <h3>Poda y Mantenimiento</h3>
+        <p>Poda, limpieza y mantenimiento de árboles, arbustos y plantas.</p>
+      </div>
+      <div class="servicio-card reveal">
+        <div class="bgimg" style="background-image:url('https://images.unsplash.com/photo-1629575063988-881596e38d31?fm=jpg&q=70&w=1200&auto=format&fit=crop')"></div>
+        <span class="num">05</span>
+        <h3>Parquización</h3>
+        <p>Diseño y ejecución de espacios verdes y áreas exteriores.</p>
+      </div>
+      <div class="servicio-card reveal">
+        <div class="bgimg" style="background-image:url('https://images.unsplash.com/photo-1773427635639-ae852705e4a0?fm=jpg&q=70&w=1200&auto=format&fit=crop')"></div>
+        <span class="num">06</span>
+        <h3>Asesoramiento Paisajístico</h3>
+        <p>Asesoramiento profesional para mejorar y transformar espacios existentes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proceso">
+  <div class="container">
+    <div class="head reveal">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2>Del proyecto a tu espacio verde.</h2>
+    </div>
+    <div class="pasos">
+      <div class="paso reveal">
+        <div class="n">01</div>
+        <h3>Conocemos tu espacio</h3>
+        <p>Analizamos el terreno, necesidades y objetivos.</p>
+      </div>
+      <div class="paso reveal">
+        <div class="n">02</div>
+        <h3>Diseñamos</h3>
+        <p>Desarrollamos una propuesta adaptada a tu estilo y presupuesto.</p>
+      </div>
+      <div class="paso reveal">
+        <div class="n">03</div>
+        <h3>Transformamos</h3>
+        <p>Llevamos el proyecto a la realidad cuidando cada detalle.</p>
+      </div>
+      <div class="paso reveal">
+        <div class="n">04</div>
+        <h3>Mantenemos</h3>
+        <p>Ofrecemos mantenimiento para que el espacio siga impecable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proyectos" id="proyectos">
+  <div class="container">
+    <div class="head reveal">
+      <p class="eyebrow">Proyectos</p>
+      <h2>Proyectos que hablan por sí solos.</h2>
+    </div>
+    <div class="galeria">
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1761637822930-fb1c1a3df94d?fm=jpg&q=75&w=1400&auto=format&fit=crop" alt="Jardín residencial moderno con sendero de piedra y setos en General Rodríguez" loading="lazy">
+        <span class="tag">Jardín residencial</span>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1773427663260-8418a314f0ee?fm=jpg&q=75&w=1000&auto=format&fit=crop" alt="Diseño de parque con césped prolijo" loading="lazy">
+        <span class="tag">Diseño de parque</span>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1609757754057-8a8e17eb73b2?fm=jpg&q=75&w=1000&auto=format&fit=crop" alt="Cantero con flores junto a fachada moderna" loading="lazy">
+        <span class="tag">Canteros</span>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1779462929245-5fa26aa68924?fm=jpg&q=75&w=1200&auto=format&fit=crop" alt="Jardín moderno con arbustos en flor" loading="lazy">
+        <span class="tag">Jardín moderno</span>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1731259240474-5370d9ca53ba?fm=jpg&q=75&w=1200&auto=format&fit=crop" alt="Espacio verde con césped cuidado y árboles" loading="lazy">
+        <span class="tag">Espacios verdes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="diferencial">
+  <div class="container grid">
+    <div class="img-wrap reveal">
+      <img src="https://images.unsplash.com/photo-1781797221329-c3d083ab6d99?fm=jpg&q=78&w=1200&auto=format&fit=crop" alt="Jardín con diseño personalizado y vegetación cuidada" loading="lazy">
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Nuestro diferencial</p>
+      <h2>Cada jardín tiene su propia identidad.</h2>
+      <p>No creemos en soluciones iguales para todos. Diseñamos cada espacio teniendo en cuenta su arquitectura, dimensiones, orientación, vegetación y estilo de vida.</p>
+      <p>Nuestro objetivo es crear espacios verdes que no solamente sean atractivos, sino también funcionales, sostenibles y fáciles de mantener.</p>
+      <div class="indicadores">
+        <div class="indicador"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg><span>Diseño personalizado</span></div>
+        <div class="indicador"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg><span>Paisajista matriculado</span></div>
+        <div class="indicador"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg><span>Atención profesional</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonios">
+  <div class="container">
+    <div class="head reveal">
+      <p class="eyebrow">Testimonios</p>
+      <h2>Lo que dicen nuestros clientes</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <p class="quote">“Transformaron por completo el fondo de casa. El diseño quedó elegante y muy fácil de mantener.”</p>
+        <div class="who"><span class="name">María F.</span><span class="place">General Rodríguez</span></div>
+      </div>
+      <div class="test-card reveal">
+        <p class="quote">“Atención personalizada de principio a fin. Entendieron exactamente lo que buscábamos.”</p>
+        <div class="who"><span class="name">Diego R.</span><span class="place">Villa Paula</span></div>
+      </div>
+      <div class="test-card reveal">
+        <p class="quote">“Profesionales, prolijos y puntuales. El jardín se ve impecable todo el año.”</p>
+        <div class="who"><span class="name">Lucía M.</span><span class="place">Cañada de Escobar</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final reveal">
+  <div>
+    <h2>¿Soñás con transformar tu espacio verde?</h2>
+    <p>Contanos tu idea y recibí asesoramiento para llevarla a la realidad.</p>
+    <a class="btn btn-outline-light" href="https://wa.me/541125753220" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="container grid">
+    <div class="reveal">
+      <p class="eyebrow">Contacto</p>
+      <h2>Hablemos de tu proyecto.</h2>
+      <div class="info">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><small>Zona de trabajo</small>Sueño Verde Jardinería y Paisajismo<br>General Rodríguez y alrededores</div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><small>WhatsApp</small>+54 11 2575-3220</div>
+        </div>
+      </div>
+      <a class="btn btn-solid" href="https://wa.me/541125753220" target="_blank" rel="noopener">Enviar WhatsApp</a>
+    </div>
+
+    <form class="presupuesto reveal" id="presupuestoForm">
+      <div class="row2">
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="field">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="tipo">Tipo de proyecto</label>
+        <select id="tipo" name="tipo">
+          <option>Diseño y paisajismo</option>
+          <option>Mantenimiento de jardines</option>
+          <option>Diseño de jardines</option>
+          <option>Poda y mantenimiento</option>
+          <option>Parquización</option>
+          <option>Asesoramiento paisajístico</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Contanos brevemente tu idea o el estado actual de tu espacio verde."></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid">Solicitar presupuesto</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo2">SUEÑO VERDE<br>Jardinería &amp; Paisajismo</div>
+        <p class="tagline">“Espacios verdes diseñados para disfrutar.”</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="col-title">Navegación</div>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="col">
+        <div class="col-title">Contacto</div>
+        <div>General Rodríguez y alrededores</div>
+        <div>WhatsApp: +54 11 2575-3220</div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Sueño Verde Jardinería y Paisajismo. Todos los derechos reservados.</span>
+      <span>Paisajista matriculado · General Rodríguez, Buenos Aires</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/541125753220" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.3.63 4.44 1.72 6.28L4 29l7.9-1.66a11.94 11.94 0 0 0 4.11.72h.01c6.63 0 12.01-5.38 12.01-12.05C28.03 8.38 22.65 3 16.01 3zm7.05 17.15c-.3.84-1.7 1.6-2.34 1.68-.6.08-1.36.11-2.19-.14-.5-.15-1.15-.37-1.98-.72-3.49-1.5-5.77-4.97-5.95-5.2-.17-.23-1.42-1.88-1.42-3.58 0-1.7.9-2.53 1.21-2.87.31-.34.68-.42.91-.42.23 0 .46 0 .66.01.21.01.5-.08.78.6.3.72 1.02 2.49 1.11 2.67.09.18.15.39.03.62-.12.23-.18.39-.35.6-.18.21-.37.47-.53.63-.18.18-.36.37-.16.72.2.35.9 1.49 1.94 2.42 1.34 1.19 2.47 1.56 2.83 1.74.35.18.56.15.77-.09.21-.24.9-1.05 1.14-1.41.24-.35.47-.29.78-.18.32.12 2.03.96 2.38 1.13.35.18.58.26.66.41.09.15.09.85-.21 1.69z"/></svg>
+</a>
+
+<script>
+  // Header shrink on scroll
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => {
+    if(window.scrollY > 40){ header.classList.add('scrolled'); }
+    else { header.classList.remove('scrolled'); }
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Mobile menu
+  const burger = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileNav.classList.remove('open');
+  }));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.14});
+  revealEls.forEach(el => io.observe(el));
+
+  // Presupuesto form -> WhatsApp
+  const form = document.getElementById('presupuestoForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const tipo = document.getElementById('tipo').value;
+    const mensaje = document.getElementById('mensaje').value.trim();
+    let texto = `Hola, soy ${nombre}. Quiero solicitar un presupuesto para: ${tipo}.`;
+    if(mensaje){ texto += ` Mensaje: ${mensaje}`; }
+    if(telefono){ texto += ` (Tel: ${telefono})`; }
+    window.open(`https://wa.me/541125753220?text=${encodeURIComponent(texto)}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
 
